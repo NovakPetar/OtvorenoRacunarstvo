@@ -1,0 +1,191 @@
+[
+  {
+    "Oznaka": "A2",
+    "NeformalniNaziv": "Zagorska autocesta",
+    "Duljina": 60,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Krapina",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 15.883336373016206,
+        "GeoSirina": 46.133674792586774
+      }
+    ]
+  },
+  {
+    "Oznaka": "A9",
+    "NeformalniNaziv": "Istarski ipsilon",
+    "Duljina": 76.8,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Višnjan",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 13.708791723415816,
+        "GeoSirina": 45.27375392313616
+      }
+    ]
+  },
+  {
+    "Oznaka": "A10",
+    "NeformalniNaziv": "Neretvanska autocesta",
+    "Duljina": 8.5,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Čarapine",
+        "ImaEnc": true,
+        "Kontakt": null,
+        "GeoDuzina": 17.547682367476867,
+        "GeoSirina": 43.11951173459808
+      }
+    ]
+  },
+  {
+    "Oznaka": "A5",
+    "NeformalniNaziv": "Slavonska autocesta Slavonika",
+    "Duljina": 58.7,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Đakovo",
+        "ImaEnc": true,
+        "Kontakt": null,
+        "GeoDuzina": 18.38468862526951,
+        "GeoSirina": 45.324518877965716
+      }
+    ]
+  },
+  {
+    "Oznaka": "A6",
+    "NeformalniNaziv": "Primorsko-goranska autocesta Goranka",
+    "Duljina": 81.25,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Vrbovsko",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 15.08654407697323,
+        "GeoSirina": 45.36248340919582
+      }
+    ]
+  },
+  {
+    "Oznaka": "A7",
+    "NeformalniNaziv": "Kvarnerska autocesta Primorka",
+    "Duljina": 28,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Rupa",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 14.268873454112756,
+        "GeoSirina": 45.45642338334027
+      }
+    ]
+  },
+  {
+    "Oznaka": "A8",
+    "NeformalniNaziv": "Istarski ipsilon",
+    "Duljina": 64.2,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Cerovlje",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 14.016986382938295,
+        "GeoSirina": 45.27426877256247
+      }
+    ]
+  },
+  {
+    "Oznaka": "A11",
+    "NeformalniNaziv": "Sisačka autocesta",
+    "Duljina": 32.7,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Mraclin",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 16.075741311796136,
+        "GeoSirina": 45.664384544576855
+      }
+    ]
+  },
+  {
+    "Oznaka": "A1",
+    "NeformalniNaziv": "Autocesta kralja Tomislava, Dalmatina",
+    "Duljina": 480.15,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Dugopolje",
+        "ImaEnc": true,
+        "Kontakt": "prodaja.dugopolje@hac.hr",
+        "GeoDuzina": 16.571457040517554,
+        "GeoSirina": 43.5960856119359
+      },
+      {
+        "Naziv": "Gospić",
+        "ImaEnc": true,
+        "Kontakt": null,
+        "GeoDuzina": 15.389265265192948,
+        "GeoSirina": 44.661611882730945
+      }
+    ]
+  },
+  {
+    "Oznaka": "A3",
+    "NeformalniNaziv": "Posavska autocesta",
+    "Duljina": 306.4,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Bregana",
+        "ImaEnc": true,
+        "Kontakt": "prodaja.bregana@hac.hr",
+        "GeoDuzina": 15.704587254134351,
+        "GeoSirina": 45.839274314127735
+      },
+      {
+        "Naziv": "Ivanić Grad",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 16.390836571163966,
+        "GeoSirina": 45.690781205256606
+      },
+      {
+        "Naziv": "Kutina",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 16.76744572698379,
+        "GeoSirina": 45.46240759939316
+      }
+    ]
+  },
+  {
+    "Oznaka": "A4",
+    "NeformalniNaziv": "Varaždinska autocesta",
+    "Duljina": 96.9,
+    "NaplatnePostaje": [
+      {
+        "Naziv": "Novi Marof",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 16.362853689535108,
+        "GeoSirina": 46.17427821419313
+      },
+      {
+        "Naziv": "Čakovec",
+        "ImaEnc": false,
+        "Kontakt": null,
+        "GeoDuzina": 16.52968862699292,
+        "GeoSirina": 46.35015150044522
+      },
+      {
+        "Naziv": "Čakovec",
+        "ImaEnc": true,
+        "Kontakt": "prodaja.slavonskibrod@hac.hr",
+        "GeoDuzina": 17.94509031534414,
+        "GeoSirina": 45.16857439720645
+      }
+    ]
+  }
+]
