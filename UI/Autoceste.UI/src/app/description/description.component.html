@@ -1,0 +1,39 @@
+<div>
+
+    <p>Ovaj repozitorij sadži skup otvorenih podataka s informacijama o hrvatskim autocestama i naplatnim postajama na njima.</p>
+  
+    <h2>O skupu podataka</h2>
+    <ul>
+      <li><strong>Autor:</strong> Petar Novak</li>
+      <li><strong>Verzija:</strong> 1.0</li>
+      <li><strong>Zadnje ažurirano:</strong> 27.10.2023.</li>
+      <li><strong>Jezik:</strong> Hrvatski</li>
+      <li><strong>Licencija:</strong> Creative Commons Zero (CC0) v1.0 Universal
+        <ul>
+          <li>omogućava bilo kome da koristi skup podataka u bilo koje svrhe, bez ikakvih ograničenja</li>
+          <li>skup podataka je u javnom vlasništvu u najvećoj mogućoj mjeri u okviru zakona o autorskim pravima</li>
+        </ul>
+      </li>
+      <li><strong>Dostupni formati:</strong> JSON, CSV</li>
+    </ul>
+  
+    <h2>Opis atributa</h2>
+  
+    <h3>Autoceste</h3>
+    <ul>
+      <li><strong>Oznaka:</strong> string - oznaka autoceste (npr. A1)</li>
+      <li><strong>NeformalniNaziv:</strong> string (optional) - neformalni naziv autoceste (npr. Istarski ipsilon)</li>
+      <li><strong>Duljina:</strong> float - duljina autoceste u kilometrima</li>
+      <li><strong>NaplatnePostaje:</strong> array - lista naplatnih postaja koje se nalaze na autocesti (odnosi se samo na JSON format)</li>
+    </ul>
+  
+    <h3>Naplatne postaje</h3>
+    <ul>
+      <li><strong>Naziv:</strong> string - naziv naplatne postaje, obično nazvana po najbližem gradu ili općini</li>
+      <li><strong>GeoDuzina:</strong> float - geografska dužina naplatne postaje iskazana kao decimalni broj, pozitivni brojevi označavaju istok, a negativni zapad</li>
+      <li><strong>GeoSirina:</strong> float - geografska širina naplatne postaje iskazana kao decimalni broj, pozitivni brojevi označavaju sjever, a negativni jug</li>
+      <li><strong>ImaEnc:</strong> boolean - TRUE ako je na naplatnoj postaji moguće plaćanje cestarine ENC-uređajem, FALSE inače</li>
+      <li><strong>Kontakt:</strong> string (optional) - e-mail adresa za upite vezane uz naplatnu postaju</li>
+    </ul>
+  
+</div>

@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+}
+
+.wide-search-bar {
+    width: 60%;
+}
+
+.upper-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 10px 10px 10px;
+}
