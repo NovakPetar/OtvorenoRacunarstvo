@@ -1,17 +1,17 @@
-oznaka,neformalninaziv,duljina,naziv,geoduzina,geosirina,imaenc,kontakt
-A1,"Autocesta kralja Tomislava, Dalmatina",480.15,Dugopolje,16.571457040517554,43.5960856119359,t,prodaja.dugopolje@hac.hr
-A1,"Autocesta kralja Tomislava, Dalmatina",480.15,Gospić,15.389265265192948,44.661611882730945,t,
-A6,Primorsko-goranska autocesta Goranka,81.25,Vrbovsko,15.08654407697323,45.36248340919582,f,
-A9,Istarski ipsilon,76.8,Višnjan,13.708791723415816,45.27375392313616,f,
-A3,Posavska autocesta,306.4,Bregana,15.704587254134351,45.839274314127735,t,prodaja.bregana@hac.hr
-A4,Varaždinska autocesta,96.9,Novi Marof,16.362853689535108,46.17427821419313,f,
-A4,Varaždinska autocesta,96.9,Čakovec,16.52968862699292,46.35015150044522,f,
-A3,Posavska autocesta,306.4,Ivanić Grad,16.390836571163966,45.690781205256606,f,
-A3,Posavska autocesta,306.4,Kutina,16.76744572698379,45.46240759939316,f,
-A4,Varaždinska autocesta,96.9,Čakovec,17.94509031534414,45.16857439720645,t,prodaja.slavonskibrod@hac.hr
-A2,Zagorska autocesta,60,Krapina,15.883336373016206,46.133674792586774,f,
-A5,Slavonska autocesta Slavonika,58.7,Đakovo,18.38468862526951,45.324518877965716,t,
-A7,Kvarnerska autocesta Primorka,28,Rupa,14.268873454112756,45.45642338334027,f,
-A8,Istarski ipsilon,64.2,Cerovlje,14.016986382938295,45.27426877256247,f,
-A10,Neretvanska autocesta,8.5,Čarapine,17.547682367476867,43.11951173459808,t,
-A11,Sisačka autocesta,32.7,Mraclin,16.075741311796136,45.664384544576855,f,
+oznaka,neformalninaziv,dionica,duljina,naziv,geoduzina,geosirina,imaenc,kontakt
+A1,"Autocesta kralja Tomislava, Dalmatina",Zagreb (Lučko) – Bosiljevo – Žuta Lokva – Split – Ploče – Dubrovnik,480.15,Dugopolje,16.571457040517554,43.5960856119359,t,prodaja.dugopolje@hac.hr
+A1,"Autocesta kralja Tomislava, Dalmatina",Zagreb (Lučko) – Bosiljevo – Žuta Lokva – Split – Ploče – Dubrovnik,480.15,Gospić,15.389265265192948,44.661611882730945,t,
+A6,Primorsko-goranska autocesta Goranka,Bosiljevo – Rijeka (Orehovica),81.25,Vrbovsko,15.08654407697323,45.36248340919582,f,
+A9,Istarski ipsilon,Kaštel – Kanfanar – Pula,76.8,Višnjan,13.708791723415816,45.27375392313616,f,
+A3,Posavska autocesta,Bregana – Zagreb – Okučani – Sredanci – Lipovac,306.4,Bregana,15.704587254134351,45.839274314127735,t,prodaja.bregana@hac.hr
+A4,Varaždinska autocesta,Zagreb (Ivanja Reka) – Sveta Helena – Goričan,96.9,Novi Marof,16.362853689535108,46.17427821419313,f,
+A4,Varaždinska autocesta,Zagreb (Ivanja Reka) – Sveta Helena – Goričan,96.9,Čakovec,16.52968862699292,46.35015150044522,f,
+A3,Posavska autocesta,Bregana – Zagreb – Okučani – Sredanci – Lipovac,306.4,Ivanić Grad,16.390836571163966,45.690781205256606,f,
+A3,Posavska autocesta,Bregana – Zagreb – Okučani – Sredanci – Lipovac,306.4,Kutina,16.76744572698379,45.46240759939316,f,
+A4,Varaždinska autocesta,Zagreb (Ivanja Reka) – Sveta Helena – Goričan,96.9,Čakovec,17.94509031534414,45.16857439720645,t,prodaja.slavonskibrod@hac.hr
+A2,Zagorska autocesta,Zagreb (Jankomir) – Macelj,60,Krapina,15.883336373016206,46.133674792586774,f,
+A5,Slavonska autocesta Slavonika,Branjin Vrh – Osijek – Sredanci – Svilaj,58.7,Đakovo,18.38468862526951,45.324518877965716,t,
+A7,Kvarnerska autocesta Primorka,Rupa – Rijeka – Žuta Lokva,28,Rupa,14.268873454112756,45.45642338334027,f,
+A8,Istarski ipsilon,Kanfanar – Rijeka (Matulji),64.2,Cerovlje,14.016986382938295,45.27426877256247,f,
+A10,Neretvanska autocesta,Granični prijelaz Nova Sela – čvor Ploče,8.5,Čarapine,17.547682367476867,43.11951173459808,t,
+A11,Sisačka autocesta,Zagreb (Jakuševec) – Sisak,32.7,Mraclin,16.075741311796136,45.664384544576855,f,

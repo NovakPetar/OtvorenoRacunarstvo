@@ -52,6 +52,13 @@ namespace Autoceste.BLL.Services
         public List<Autocesta> GetAutocesteFiltered(string searchProperty, string searchTerm)
         {
             if (string.IsNullOrEmpty(searchTerm)) return GetAutoceste();
+            Func<DAL.Models.Autoceste, bool> filter = GetFilter(searchProperty, searchTerm);
+
+            return GetAutocesteFiltered(filter);
+        }
+
+        internal Func<DAL.Models.Autoceste, bool> GetFilter(string searchProperty, string searchTerm)
+        {
             Func<Autoceste.DAL.Models.Autoceste, bool> filter = null;
             switch (searchProperty)
             {
@@ -74,7 +81,8 @@ namespace Autoceste.BLL.Services
                 default:
                     throw new Exception("searchProperty not applicable");
             }
-            return GetAutocesteFiltered(filter);
+
+            return filter;
         }
 
         public List<Autocesta> GetAutocesteFiltered(Func<Autoceste.DAL.Models.Autoceste, bool> filter)

@@ -199,7 +199,8 @@ export class DatatableComponent implements OnInit {
     this.openDataService.getJsonFiltered(this.selectedOption, this.searchTerm).subscribe(
       (successResponse) => {
         
-        jsonDataString = JSON.stringify(successResponse);
+        //jsonDataString = JSON.stringify(successResponse);
+        jsonDataString = successResponse;
         const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonDataString);
 
         // Create a temporary anchor element

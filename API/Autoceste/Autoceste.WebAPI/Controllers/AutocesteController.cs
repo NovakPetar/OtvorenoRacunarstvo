@@ -26,7 +26,7 @@ namespace Autoceste.WebAPI.Controllers
         [HttpGet, Route("autoceste")]
         public IActionResult GetAutoceste()
         {
-            var a = autocesteService.GetAutoceste;
+            var a = autocesteService.GetAutoceste();
 
             if (a == null) return NotFound();
 

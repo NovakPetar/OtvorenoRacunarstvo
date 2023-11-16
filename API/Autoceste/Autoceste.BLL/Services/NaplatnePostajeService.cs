@@ -29,7 +29,7 @@ namespace Autoceste.BLL.Services
                 GeoDuzina = np.Geoduzina,
                 GeoSirina = np.Geosirina,
                 Kontakt = np.Kontakt,
-                ImaEnc = np.Imaenc
+                ImaEnc = np.Imaenc ?? false
             };
         }
 
@@ -46,7 +46,7 @@ namespace Autoceste.BLL.Services
                     GeoDuzina = np.Geoduzina,
                     GeoSirina = np.Geosirina,
                     Kontakt = np.Kontakt,
-                    ImaEnc = np.Imaenc
+                    ImaEnc = np.Imaenc ?? false
                 });
             }
             return list;
@@ -65,7 +65,7 @@ namespace Autoceste.BLL.Services
                     GeoDuzina = np.Geoduzina,
                     GeoSirina = np.Geosirina,
                     Kontakt = np.Kontakt,
-                    ImaEnc = np.Imaenc
+                    ImaEnc = np.Imaenc ?? false
                 });
             }
             return list;
@@ -84,7 +84,7 @@ namespace Autoceste.BLL.Services
                     GeoDuzina = np.Geoduzina,
                     GeoSirina = np.Geosirina,
                     Kontakt = np.Kontakt,
-                    ImaEnc = np.Imaenc
+                    ImaEnc = np.Imaenc ?? false
                 });
             }
             return list;
@@ -93,6 +93,12 @@ namespace Autoceste.BLL.Services
         public List<NaplatnaPostaja> GetNaplatnePostajeFiltered(string searchProperty, string searchTerm)
         {
             if (string.IsNullOrEmpty(searchTerm)) return GetNaplatnePostaje();
+            Func<Naplatnepostaje, bool> filter = GetFilter(searchProperty, searchTerm);
+            return GetNaplatnePostajeFiltered(filter);
+        }
+
+        internal Func<Naplatnepostaje, bool> GetFilter(string searchProperty, string searchTerm)
+        {
             Func<Naplatnepostaje, bool> filter = null;
             switch (searchProperty)
             {
@@ -133,7 +139,8 @@ namespace Autoceste.BLL.Services
                 default:
                     throw new Exception("searchProperty not applicable");
             }
-            return GetNaplatnePostajeFiltered(filter);
+
+            return filter;
         }
 
         private string NaplatnaPostajaToString(Naplatnepostaje naplatnepostaja)

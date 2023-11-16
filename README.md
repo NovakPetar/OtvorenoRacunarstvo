@@ -17,6 +17,7 @@ Ovaj repozitorij sadži skup otvorenih podataka s informacijama o hrvatskim auto
 - Autoceste
 	- **Oznaka** - string - oznaka autoceste (npr. A1)
 	- **NeformalniNaziv** - string *(optional)* - neformalni naziv autoceste (npr. Istarski ipsilon)
+	- **Dionica** - string - dionica autoceste
 	- **Duljina** - float - duljina autoceste u kilometrima
 	- **NaplatnePostaje** - array - lista naplatnih postaja koje se nalaze na autocesti (odnosi se samo na JSON format)
 - Naplatne postaje

@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+import { JsonSchemaComponent } from './components/json-schema/json-schema.component';
 
 
 
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     NavbarComponent,
     DescriptionComponent,
-    DatatableComponent
+    DatatableComponent,
+    JsonSchemaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 {
    "$schema":"http://json-schema.org/draft-07/schema#",
-   "$id":"http://localhost:4200/autoceste-schema.json",
+   "$id":"http://localhost:4200/json-schema",
    "type":"array",
    "items":{
       "$id":"#autocesta",
@@ -12,10 +12,14 @@
             "title":"Oznaka"
          },
          "NeformalniNaziv":{
-            "type":"string",
-            "nullable":true,
+            "type":["string", "null"],
             "description":"Neformalni naziv autoceste (npr. Istarski ipsilon)",
             "title":"Neformalni Naziv"
+         },
+		 "Dionica":{
+            "type":"string",
+            "description":"Dionica autoceste",
+            "title":"Dionica"
          },
          "Duljina":{
             "type":"number",
@@ -49,8 +53,7 @@
                      "title":"Ima ENC"
                   },
                   "Kontakt":{
-                     "type":"string",
-                     "nullable":true,
+                     "type":["string", "null"],
                      "description":"E-mail adresa za upite vezane uz naplatnu postaju",
                      "title":"Kontakt"
                   }
@@ -67,6 +70,7 @@
       "required":[
          "Oznaka",
          "Duljina",
+		 "Dionica",
          "NaplatnePostaje"
       ],
       "title":"Autoceste"

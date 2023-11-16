@@ -13,7 +13,7 @@ namespace Autoceste.BLL.Models
         public string Naziv { get; set; }
         public double? GeoDuzina { get; set; }
         public double? GeoSirina { get; set; }
-        public bool? ImaEnc { get; set; }
+        public bool ImaEnc { get; set; }
         public string? Kontakt { get; set; }
     }
 }
