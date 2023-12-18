@@ -1,5 +1,6 @@
 ﻿using Autoceste.BLL.Models;
 using Autoceste.DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,20 +32,32 @@ namespace Autoceste.BLL.Services
             };
         }
 
-        public List<Autocesta> GetAutoceste()
+        public List<Autocesta> GetAutoceste(bool includeNaplatnePostaje = false)
         {
             var list = new List<Autocesta>();
             foreach (var a in context.Autocestes)
             {
-                list.Add(new Autocesta
+                var autocesta = new Autocesta
                 {
                     Id = a.Id,
                     NeformalniNaziv = a.Neformalninaziv,
                     Oznaka = a.Oznaka,
                     Duljina = a.Duljina,
                     Dionica = a.Dionica
-                });
+                };
+
+                list.Add(autocesta);
             }
+
+            if (includeNaplatnePostaje)
+            {
+                foreach (Autocesta autocesta in list)
+                {
+                    var npService = new NaplatnePostajeService(this.context);
+                    autocesta.NaplatnePostaje = npService.GetNaplatnePostajeByAutocestaId(autocesta.Id);
+                }
+            }
+            
 
             return list;
         }
@@ -79,7 +92,7 @@ namespace Autoceste.BLL.Services
                     });
                     break;
                 default:
-                    throw new Exception("searchProperty not applicable");
+                    throw new ArgumentException("searchProperty not applicable");
             }
 
             return filter;

@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autoceste.DAL", "Autoceste.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autoceste.BLL", "Autoceste.BLL\Autoceste.BLL.csproj", "{8461E8D6-AA9B-466C-A537-1E51687C1CE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoceste.WebAPI", "Autoceste.WebAPI\Autoceste.WebAPI.csproj", "{8474099D-F919-4D7E-B84B-65A253FE78A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autoceste.WebAPI", "Autoceste.WebAPI\Autoceste.WebAPI.csproj", "{8474099D-F919-4D7E-B84B-65A253FE78A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoceste.WebAPI2", "Autoceste.WebAPI2\Autoceste.WebAPI2.csproj", "{1A81CD73-0EAC-4971-AF41-D3AC419DB382}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8474099D-F919-4D7E-B84B-65A253FE78A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8474099D-F919-4D7E-B84B-65A253FE78A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8474099D-F919-4D7E-B84B-65A253FE78A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A81CD73-0EAC-4971-AF41-D3AC419DB382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A81CD73-0EAC-4971-AF41-D3AC419DB382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A81CD73-0EAC-4971-AF41-D3AC419DB382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A81CD73-0EAC-4971-AF41-D3AC419DB382}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -21,6 +21,7 @@ namespace Autoceste.BLL.Services
         {
             var np = context.Naplatnepostajes.Where(x => x.Id == id).FirstOrDefault();
 
+            if (np == null) return null;
             return new NaplatnaPostaja
             {
                 AutocestaId = np.Autocestaid,
@@ -137,7 +138,7 @@ namespace Autoceste.BLL.Services
                     filter = (np => NaplatnaPostajaToString(np).ToLower().Contains(searchTerm.ToLower()));
                     break;
                 default:
-                    throw new Exception("searchProperty not applicable");
+                    throw new ArgumentException("searchProperty not applicable");
             }
 
             return filter;
@@ -153,6 +154,70 @@ namespace Autoceste.BLL.Services
             sb.Append(naplatnepostaja.Autocesta.Neformalninaziv);
 
             return sb.ToString();
+        }
+
+        private static Naplatnepostaje MapBllModelToDal(NaplatnaPostaja naplatnaPostaja)
+        {
+            return new Naplatnepostaje
+            {
+                Naziv = naplatnaPostaja.Naziv,
+                Geoduzina = naplatnaPostaja.GeoDuzina,
+                Geosirina = naplatnaPostaja.GeoSirina,
+                Autocestaid = naplatnaPostaja.AutocestaId,
+                Imaenc = naplatnaPostaja.ImaEnc,
+                Kontakt = naplatnaPostaja.Kontakt
+            };
+        }
+
+        private static NaplatnaPostaja MapDalModelToBll(Naplatnepostaje naplatnaPostaja)
+        {
+            return new NaplatnaPostaja
+            {
+                Id = naplatnaPostaja.Id,
+                Naziv = naplatnaPostaja.Naziv,
+                GeoDuzina = naplatnaPostaja.Geoduzina,
+                GeoSirina = naplatnaPostaja.Geosirina,
+                AutocestaId = naplatnaPostaja.Autocestaid,
+                ImaEnc = naplatnaPostaja.Imaenc ?? false,
+                Kontakt = naplatnaPostaja.Kontakt
+            };
+        }
+
+        public NaplatnaPostaja CreateNaplatnaPostaja(NaplatnaPostaja naplatnaPostaja)
+        {
+            var entity = MapBllModelToDal(naplatnaPostaja);
+            var naplatna = context.Naplatnepostajes.Add(entity);
+
+            context.SaveChanges();
+            return MapDalModelToBll(naplatna.Entity);
+            //return MapDalModelToBll(entity);
+        }
+
+        public NaplatnaPostaja UpdateNaplatnaPostaja(int id, NaplatnaPostaja naplatnaPostaja)
+        {
+            var existingNp = context.Naplatnepostajes.Where(np => np.Id == id).FirstOrDefault();
+            if (existingNp == null) return null;
+
+            existingNp.Naziv = naplatnaPostaja.Naziv;
+            existingNp.Autocestaid = naplatnaPostaja.AutocestaId;
+            existingNp.Geoduzina = naplatnaPostaja.GeoDuzina;
+            existingNp.Geosirina = naplatnaPostaja.GeoSirina;
+            existingNp.Kontakt = naplatnaPostaja.Kontakt;
+            existingNp.Imaenc = naplatnaPostaja.ImaEnc;
+
+            context.SaveChanges();
+            return MapDalModelToBll(existingNp);
+        }
+
+        public bool DelateNaplatnaPostaja(int id)
+        {
+            var npToDelete = context.Naplatnepostajes.Where(np => np.Id == id).FirstOrDefault();
+            if (npToDelete == null) return false;
+
+            context.Naplatnepostajes.Remove(npToDelete);
+            context.SaveChanges();
+
+            return true;
         }
     }
 }

@@ -1,0 +1,317 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Autoceste API",
+    "contact": {
+      "email": "petar.novak@fer.hr"
+    },
+    "license": {
+      "name": "CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/autoceste/{id}": {
+      "get": {
+        "tags": [
+          "Autoceste"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "includeNaplatnePostaje",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/autoceste": {
+      "get": {
+        "tags": [
+          "Autoceste"
+        ],
+        "parameters": [
+          {
+            "name": "includeNaplatnePostaje",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/search/autoceste": {
+      "get": {
+        "tags": [
+          "Autoceste"
+        ],
+        "parameters": [
+          {
+            "name": "searchProperty",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/naplatne-postaje/{id}": {
+      "get": {
+        "tags": [
+          "NaplatnePostaje"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/naplatne-postaje": {
+      "get": {
+        "tags": [
+          "NaplatnePostaje"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/autoceste/{autocestaId}/naplatne-postaje": {
+      "get": {
+        "tags": [
+          "NaplatnePostaje"
+        ],
+        "parameters": [
+          {
+            "name": "autocestaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/search/naplatne-postaje": {
+      "get": {
+        "tags": [
+          "NaplatnePostaje"
+        ],
+        "parameters": [
+          {
+            "name": "searchProperty",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/autoceste": {
+      "post": {
+        "tags": [
+          "NaplatnePostaje"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NaplatnaPostaja"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NaplatnaPostaja"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NaplatnaPostaja"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/autoceste/{id}": {
+      "delete": {
+        "tags": [
+          "NaplatnePostaje"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "NaplatnePostaje"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NaplatnaPostaja"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NaplatnaPostaja"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NaplatnaPostaja"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "NaplatnaPostaja": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "autocestaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "naziv": {
+            "type": "string",
+            "nullable": true
+          },
+          "geoDuzina": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "geoSirina": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "imaEnc": {
+            "type": "boolean"
+          },
+          "kontakt": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
