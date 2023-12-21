@@ -47,26 +47,59 @@ namespace Autoceste.WebAPI2.Controllers
         }
 
         [HttpGet, Route("naplatne-postaje")]
-        public IActionResult GetNaplatnePostaje()
+        public IActionResult GetNaplatnePostaje(string searchProperty, string searchTerm)
         {
             try
             {
-                var response = new ResponseWrapper();
-
-                var np = npService.GetNaplatnePostaje();
-
-                if (np == null || np.Count == 0)
+                if (searchProperty == null || searchTerm == null) //bez searcha, dohvati sve
                 {
-                    response.Status = "Not found.";
-                    response.Message = $"Nije pronađena niti jedna naplatna postaja.";
-                    return NotFound(response);
+                    var response = new ResponseWrapper();
+
+                    var np = npService.GetNaplatnePostaje();
+
+                    if (np == null || np.Count == 0)
+                    {
+                        response.Status = "Not found.";
+                        response.Message = $"Nije pronađena niti jedna naplatna postaja.";
+                        return NotFound(response);
+                    }
+
+                    response.Status = "OK";
+                    response.Message = $"Dohvaćena je lista naplatnih postaja.";
+                    response.Response = np;
+
+                    return Ok(response); 
+
+                } else //search
+                {
+                    List<NaplatnaPostaja> np = null;
+                    try
+                    {
+                        np = npService.GetNaplatnePostajeFiltered(searchProperty, searchTerm);
+                    }
+                    catch (ArgumentException)
+                    {
+                        return BadRequest(new ResponseWrapper
+                        {
+                            Status = "Bad request",
+                            Message = "SearchProperty nije valjan. Valjane vrijednosti su: Naziv, Kontakt, GeoDuzina, GeoSirina, ImaEnc, Any."
+                        });
+                    }
+
+                    var response = new ResponseWrapper();
+
+                    if (np == null || np.Count == 0)
+                    {
+                        response.Status = "Not found";
+                        response.Message = $"Provedeno pretraživanje po uvjetu {searchProperty}={searchTerm}. Niti jedna naplatna postaja nije pronađena.";
+                        return NotFound(response);
+                    }
+
+                    response.Status = "OK";
+                    response.Message = $"Provedeno pretraživanje po uvjetu {searchProperty}={searchTerm}. Dohvaćene su naplatne postaje koje zadovoljavaju uvjet.";
+                    response.Response = np;
+                    return Ok(response);
                 }
-
-                response.Status = "OK";
-                response.Message = $"Dohvaćena je lista naplatnih postaja.";
-                response.Response = np;
-
-                return Ok(response);
             }
             catch (Exception e)
             {
@@ -104,47 +137,8 @@ namespace Autoceste.WebAPI2.Controllers
             }
         }
 
-        [HttpGet, Route("search/naplatne-postaje")]
-        public IActionResult SearchNaplatnePostaje(string searchProperty, string searchTerm)
-        {
-            try
-            {
-                List<NaplatnaPostaja> np = null;
-                try
-                {
-                    np = npService.GetNaplatnePostajeFiltered(searchProperty, searchTerm);
-                }
-                catch (ArgumentException)
-                {
-                    return BadRequest(new ResponseWrapper
-                    {
-                        Status = "Bad request",
-                        Message = "SearchProperty nije valjan. Valjane vrijednosti su: Naziv, Kontakt, GeoDuzina, GeoSirina, ImaEnc, Any."
-                    });
-                }
 
-                var response = new ResponseWrapper();
-
-                if (np == null || np.Count == 0)
-                {
-                    response.Status = "Not found";
-                    response.Message = $"Provedeno pretraživanje po uvjetu {searchProperty}={searchTerm}. Niti jedna naplatna postaja nije pronađena.";
-                    return NotFound(response);
-                }
-
-                response.Status = "OK";
-                response.Message = $"Provedeno pretraživanje po uvjetu {searchProperty}={searchTerm}. Dohvaćene su naplatne postaje koje zadovoljavaju uvjet.";
-                response.Response = np;
-                return Ok(response);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return StatusCode(500, ErrorResponses.GeneralException);
-            }
-        }
-
-        [HttpPost, Route("/autoceste")]
+        [HttpPost, Route("naplatne-postaje")]
         public IActionResult Create([FromBody] NaplatnaPostaja naplatnaPostaja)
         {
             try
@@ -177,7 +171,7 @@ namespace Autoceste.WebAPI2.Controllers
             }
         }
 
-        [HttpDelete, Route("/autoceste/{id}")]
+        [HttpDelete, Route("naplatne-postaje/{id}")]
         public IActionResult Delete(int id)
         {
             try
@@ -204,7 +198,7 @@ namespace Autoceste.WebAPI2.Controllers
             }
         }
 
-        [HttpPut, Route("/autoceste/{id}")]
+        [HttpPut, Route("naplatne-postaje/{id}")]
         public IActionResult Update(int id, [FromBody] NaplatnaPostaja naplatnaPostaja)
         {
             try
